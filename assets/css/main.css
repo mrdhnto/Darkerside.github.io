@@ -2597,6 +2597,7 @@
 				border-radius: 100%;
 				display: block;
 				width: 10em;
+				transform: rotate(-27deg);
 			}
 
 		@media screen and (max-width: 1280px) {
