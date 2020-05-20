@@ -101,12 +101,12 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    new RegExp('.*\.js'),
+    new RegExp('/*\.js'),
     new workbox.strategies.CacheFirst()
 );
 
 workbox.routing.registerRoute(
-    new RegExp('.*\.html'),
+    new RegExp('/*\.html'),
     new workbox.strategies.CacheFirst()
 );
 
