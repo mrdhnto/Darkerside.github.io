@@ -107,6 +107,11 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+    new RegExp('/.*\\.html'),
+    new workbox.strategies.CacheFirst()
+);
+
+workbox.routing.registerRoute(
     new RegExp('/components/'),
     new workbox.strategies.CacheFirst()
 );
