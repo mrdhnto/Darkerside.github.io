@@ -2,7 +2,7 @@
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function() {
     navigator.serviceWorker
-      .register("../../smatch-worker.js")
+      .register("./smatch-worker.js")
       .then(function() {
         console.log("Pendaftaran ServiceWorker berhasil");
         requestPermission();

@@ -279,7 +279,7 @@ function listSavedPlayer(player){
       savedHTML += `
             <div class="row card saved-data">
               <div class="saved-content">
-                <div class="col s2 center-align"><a href="./player.html?id=${player.id}&saved=true"><img class="saved-badge" alt="player_img" src="../images/player.png"></a></div>
+                <div class="col s2 center-align"><a href="./player.html?id=${player.id}&saved=true"><img class="saved-badge" alt="player_img" src="./assets/images/player.png"></a></div>
                 <div class="col s8 truncate saved-title"><a href="./player.html?id=${player.id}&saved=true">${player.name}</a></div>
                 <div class="col s2 saved-del right-align><i class="mdi mdi-delete red-text text-darken-4" id="${player.id}" target="players" target2="${player.name}"></i></div>
               </div>
