@@ -1,0 +1,781 @@
+/* CUSTOM RESHAPE & REARRANGE CSS FOR SMatch
+/*
+/**/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+	font-family: 'Roboto';
+	overflow: overlay;
+}
+
+footer {
+	margin-top: -20px !important;
+	padding: 10px 0 1px 0 !important;
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.container {
+	min-height: 520px;
+}
+
+/* width & height */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.20); 
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.30); 
+}
+
+
+/* NAVIGATION CSS
+/*
+/**/
+
+nav .brand-logo {
+	font-size: 1.75rem;
+}
+
+.site-desc {
+	display: none;
+}
+
+.bg-dark {
+	background-color: #131417;
+}
+
+.sidebar-logo {
+	vertical-align: text-top;
+	padding: 0 32px;
+	width: 300px;
+	object-fit: cover;
+    object-position: center;
+}
+
+a.sidebar-dark {
+	padding: 0 0 !important;
+}
+
+a.sidebar-dark > span {
+	display: block;
+	color: #9e9e9e;
+	width: 100%;
+	padding: 0 32px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+a.sidebar-dark > span.active {
+	color: #00ffdc;
+}
+
+a.sidebar-dark > span > i {
+	margin-right: 15px;
+	font-size: 25px;
+    vertical-align: middle;
+}
+
+a.sidebar-dark > span:hover {
+	color: #000;
+	background-color: #00ffdc;
+
+}
+
+
+/* FOOTER CSS
+/*
+/**/
+
+.copyright {
+	display: block;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.55);
+	margin: 20px 0 10px 0;
+}
+
+.mdi.mdi-heart {
+	color: rgba(255, 0, 0, 0.65);
+}
+
+
+/* HOME PAGE CSS
+/*
+/**/
+
+.klasemen-row, .scorrer-row {
+	margin: 5px 0 !important;
+	border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+#stat-head, #score-head {
+	min-width: 600px;
+}
+
+#klasemen-header, #scorrer-header {
+	font-weight: bold;
+}
+
+#klasemen-data, #scorrer-data {
+	max-height: 215px;
+	min-width: 600px;
+	overflow: overlay;
+	margin: 0; 
+	padding: 0px; 
+}
+
+.klasemen-pos, .scorrer-pos {
+	min-width: 4%;
+	padding: 10px 4px 0 4px !important;
+	text-align: right;
+}
+
+.klasemen-badge {
+	min-width: 7%;
+	padding: 5px 0 0 4px !important;
+	text-align: center;
+}
+
+.klasemen-badge img {
+	height: 26px;
+}
+
+.klasemen-team {
+	min-width: 41%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: left;
+}
+
+.klasemen-team a {
+	color: #fff;
+}
+
+.klasemen-teaminfo {
+	min-width: 6%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: center;
+}
+
+.logo-badge {
+	height: 26px;
+	margin-top: 5px;
+}
+
+.klasemen {
+	margin-top: -52px;
+}
+
+.live-home, .live-away {
+	font-size: 2rem;
+	min-width: 80%;
+	display: inline-block;
+}
+
+.live-home-score, .live-away-score {
+	font-size: 2rem;
+	min-width: 20%;	
+}
+
+.live-vs {
+	font-size: 2rem;
+}
+
+.schedule {
+	font-size: 1.5rem;
+	margin: 10px 0;
+}
+
+
+/* COMPETITION STATS PAGE CSS
+/*
+/**/
+.icon-tabs-nav, .icon-tabs-nav-phone {
+	font-size: 2.5rem;
+	margin: 0 20px;
+	cursor: pointer;
+	color: #868686;
+}
+
+.mdi-format-list-numbered.active, .mdi-city.active, .mdi-information.icon-tabs-nav.active {
+	color: #006064;
+}
+
+.mdi-soccer.active, .mdi-account-multiple.active, .mdi-soccer.active {
+	color: #01579b;
+}
+
+.mdi-trophy.active, .mdi-sword-cross.active {
+	color: #ff8f00;
+}
+
+.ttext-title-dark {
+	font-weight: bold;
+	margin: 10px 0 10px 0; 
+	color: #000000;
+}
+
+.ttext-info-dark {
+	margin: 0 0 10px 0;
+	color: #263238;
+}
+
+.row-winner {
+	font-size: 1.1rem;
+	margin: 0;
+	padding: 10px 0;
+}
+
+.row-winner a {
+	color: #fff;
+}
+
+.season-year {
+	border-right: 1px solid rgba(255,255,255,0.45);
+}
+
+.winner-badge {
+	width: 24px;
+	height: 24px;
+}
+
+.scorrer-name {
+	min-width: 32%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: left;
+}
+
+.scorrer-number {
+	min-width: 10%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: center;
+}
+
+.scorrer-post {
+	min-width: 13%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: left;
+}
+
+.scorrer-team {
+	min-width: 33%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: left;
+}
+
+.scorrer-goal {
+	min-width: 8%;
+	height: 37px;
+	padding: 10px 4px 0 4px !important;
+	text-align: center;
+}
+
+.divider-dark {
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+#winner-data{
+	max-height: 300px;
+	min-width: 660px;
+	overflow: overlay;
+}
+
+/* TEAM PAGE CSS
+/*
+/**/
+.logo-img {
+	display: inherit;
+	width: -webkit-fill-available;
+}
+
+.ttext-title {
+	margin: 10px 0 10px 0; 
+}
+
+.ttext-info {
+	margin: 0 0 15px 0;
+	color: #cfd8dc;
+}
+
+.ltext-title {
+	font-weight: bold;
+	color: #000;
+	margin: 0 !important;
+}
+
+.ltext-info, .ltext-info a {
+	color: #263238;
+	margin: 0 0 10px 0 !important;
+}
+
+.rtext-title {
+	margin: 0 !important;
+	min-width: 435px;
+	font-weight: bold;
+	color: #000;
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.rtext-info {
+	margin-right: 0 !important;
+	min-width: 370px;
+}
+
+.rtext-data {
+	margin: 0 0 0 0 !important;
+	padding: 10px 0;
+	border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.r-odd {
+	background-color: #ffffff;
+}
+
+.r-even {
+	background-color: #e4e4e4;
+}
+
+.squad-no{
+	min-width: 42px;
+	text-align: right;
+}
+
+.squad-name{
+	min-width: 59%;
+	border-left: 1px solid rgba(0,0,0,0.12);
+}
+ 
+.squad-name a {
+	color: #000;
+}
+
+.squad-pos {
+	min-width: 30%;
+	border-left: 1px solid rgba(0,0,0,0.12);
+}
+
+#infos-cont {
+	overflow: overlay;
+}
+
+#team-infos {
+	min-width: 205px;
+}
+
+#squad-cont {
+	overflow: overlay;
+}
+
+#squad-data {
+	max-height: 350px;
+	min-width: 435px;
+	overflow: overlay;
+	color: #000;
+}
+
+#match-data{
+	max-height: 300px;
+	min-width: 660px;
+	overflow: overlay;
+}
+
+.row-match, .row-match a {
+	font-size: 1.1rem;
+    margin: 0;
+    padding: 10px 0;
+    color: #000;
+}
+
+.btn-large .mdi {
+	font-size: 2.2rem;
+}
+
+
+/* MATCH PAGE CSS
+/*
+/**/
+.match-logo {
+	max-height: 70px;
+}
+
+.match-score {
+	font-size: 4rem;
+	margin-top: 5px;
+}
+
+.match-vs {
+	margin: 25px auto;
+	font-size: 2rem;
+}
+
+.ctext-title {
+	font-weight: bold;
+	color: #fff;
+	margin: 0 0 3px 0 !important;
+}
+
+.ctext-info, .ctext-info a {
+	color: #f1f1f1;
+	margin: 0 !important;
+}
+
+#match_info .divider {
+	background-color: rgba(255,255,255,0.25);
+	margin: 12px 0;
+}
+
+
+/* PLAYER PAGE CSS
+/*
+/**/
+#player-icon {
+	max-width: 80px;
+	margin-right: 1rem;
+	padding-right: 1rem;
+	border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+
+/* SAVED PAGE CSS
+/*
+/**/
+#saveddata {
+	padding: 0 1.5rem 0 1.5rem;
+}
+
+.saved-data {
+	height: 60px;
+}
+
+.saved-content {
+	padding: 5px;
+}
+
+.saved-badge {
+	display: inline-block;
+	height: 40px;
+	margin-top: 4px;
+}
+
+.saved-title {
+	font-size: 1.2rem;
+	margin-top: 14px;
+}
+
+.saved-title a {
+	color: #000;
+}
+
+.saved-del {
+	font-size: 2rem;
+	margin-top: 4px;
+}
+
+.mdi-delete {
+	margin-top: 4px;
+}
+
+
+/* ABOUT PAGE CSS
+/*
+/**/
+
+.avatar {
+	position: absolute;
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: -85px;
+}
+
+.avatar-img {
+	width: 12em;
+}
+
+.avatar-name {
+	display: block;
+	text-align: center;
+	font-size: 2em;
+	margin: 80px 0 20px 0;
+}
+
+.avatar-link {
+	margin: 0px 10px !important;
+}
+
+.avatar-link .mdi {
+	font-size: 30px;
+	color: #6C757D;
+}
+
+
+/* CUSTOM HELPER CSS
+/*
+/**/
+.card {
+	max-width: 970px;
+}
+
+.bold {
+	font-weight: bold !important;
+}
+
+.d-none {
+	display: none!important
+}
+
+.v-none {
+	visibility: hidden!important;
+}
+
+.m0 {
+	margin: 0px !important;
+}
+
+.m-1 {
+	margin: 1rem !important;
+}
+
+.mt0 {
+	margin-top: 0px !important;
+}
+
+.mt1 {
+	margin-top: 1rem !important;
+}
+
+.mt2 {
+	margin-top: 2rem !important;
+}
+
+.row.mt04 {
+	margin-top: 4px;
+}
+
+.mb0 {
+	margin-bottom: 0px !important;
+}
+
+.mb2 {
+	margin-bottom: 2em !important;
+}
+
+.mb2 {
+	margin-bottom: 2em !important;
+}
+
+.p0 {
+	padding: 0px!important;
+}
+
+.pt0 {
+	padding-top: 0px !important;
+}
+
+.pb0 {
+	padding-bottom: 0px!important;
+}
+
+.bt0 {
+	border-top: 0px !important;
+}
+
+.p1 {
+	padding: 1em !important;
+}
+
+.p2 {
+	padding: 2em !important;
+}
+
+.pt1{
+	padding-top: 1em !important;
+}
+
+.pr1 {
+	padding-right: 1em !important;
+}
+
+.pl1 {
+	padding-left: 1em !important;
+}
+
+.overflow-a {
+	overflow: auto !important;
+}
+
+.t-center {
+	text-align: center !important;
+	margin: 15px 0;
+}
+
+.phone-d-show {
+	display: none;
+}
+
+/* CUSTOM COLOR CSS
+/*
+/**/
+
+.gradient-cyan-teal-light {
+	background: #00e5ff;
+	background: -webkit-linear-gradient(#00e5ff, #1de9b6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00e5ff, #1de9b6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00e5ff, #1de9b6); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #00e5ff 0%, #1de9b6  100%);
+}
+
+.gradient-cyan-teal-darken {
+	background: #006064;
+	background: -webkit-linear-gradient(#006064, #00796b); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#006064, #00796b); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#006064, #00796b); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #006064 0%, #00796b  100%);
+}
+
+.gradient-blue-teal-light {
+	background: #01579b;
+	background: -webkit-linear-gradient(#01579b, #00838f); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#01579b, #00838f); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#01579b, #00838f); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #01579b 0%, #00838f  100%);
+}
+
+.gradient-blue-teal-darken {
+	background: #0d47a1;
+	background: -webkit-linear-gradient(#0d47a1, #004d40); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0d47a1, #004d40); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0d47a1, #004d40); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #0d47a1 0%, #004d40  100%);
+}
+
+.gradient-orange-amber-darken {
+	background: #d84315;
+	background: -webkit-linear-gradient(#d84315, #ff8f00); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#d84315, #ff8f00); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#d84315, #ff8f00); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #d84315 0%, #ff8f00  100%);
+}
+
+.spinner-blue-only {
+	border-color: #00838f;
+}
+
+.spinner-orange-only {
+	border-color: #ff8f00;
+}
+
+.spinner-teal-only {
+	border-color: #00ffdc;
+}
+ 
+
+
+/* RESPONSIVE CSS
+/*
+/**/
+@media only screen and (min-width: 865px){
+	.site-desc {
+		display: inline;
+	}
+}
+
+@media only screen and (max-width: 600px){
+	#squad-cont-wrapper {
+		margin-bottom: 1rem;
+	}
+
+	#squad-cont {
+		background: #01579b;
+		background: -webkit-linear-gradient(#01579b, #00838f); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(#01579b, #00838f); /* For Opera 11.1 to 12.0 */
+	    background: -moz-linear-gradient(#01579b, #00838f); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(to bottom right, #01579b 0%, #00838f  100%);;
+		transition: box-shadow .25s, -webkit-box-shadow .25s;
+		border-radius: 2px;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	}
+
+	#squad-cont h5 {
+		color: #fff;
+	}
+
+	#team-infos {
+		background: #006064;
+		background: -webkit-linear-gradient(#006064, #00796b); /* For Safari 5.1 to 6.0 */
+    	background: -o-linear-gradient(#006064, #00796b); /* For Opera 11.1 to 12.0 */
+    	background: -moz-linear-gradient(#006064, #00796b); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(to bottom right, #006064 0%, #00796b  100%);
+		transition: box-shadow .25s, -webkit-box-shadow .25s;
+		border-radius: 2px;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+		margin-bottom: 1rem;
+	}
+
+	#match-content-wrapper {
+		margin-bottom: 1rem;
+	}
+
+	#match-content {
+		background: #d84315;
+		background: -webkit-linear-gradient(#d84315, #ff8f00); /* For Safari 5.1 to 6.0 */
+    	background: -o-linear-gradient(#d84315, #ff8f00); /* For Opera 11.1 to 12.0 */
+    	background: -moz-linear-gradient(#d84315, #ff8f00); /* For Firefox 3.6 to 15 */
+		background: linear-gradient(to bottom right, #d84315 0%, #ff8f00  100%);
+		border-radius: 2px;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+		color: #fff;
+	}
+
+	.row-match a {
+		color: #fff;
+	}
+
+	.avatar {
+		margin-top: calc(100% - 101vw);
+	}
+
+	.avatar-img {
+	    width: 9em;
+	}
+
+	.phone-d-show {
+		display: inherit;
+	}
+
+	.phone-d-none {
+		display: none;
+	}
+
+	.logo-img {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+
+	.content-tabs-phone .ltext-title {
+		color: #fff;
+	}
+
+	.content-tabs-phone .ltext-info {
+		color: #eceff1 ;
+	}
+
+	.ltext-info a {
+		color: #eceff1 ;
+	}
+}
