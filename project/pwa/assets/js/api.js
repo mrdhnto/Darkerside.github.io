@@ -1,4 +1,4 @@
-//const proxy_url = 'https://cors-anywhere.herokuapp.com/';
+const proxy_url = 'https://cors-anywhere.herokuapp.com/';
 const base_url = 'https://api.football-data.org/v2/';
 const auth_token = '5fced3dfd1264c04a50486b0565ce442';
 const ongoing_url = 'matches?limit=10&status=LIVE&competitions=2021';
@@ -36,7 +36,7 @@ function error(error) {
 //ONGOING Match Fetch API
 function getOngoingMatch() {
   if ("caches" in window) {
-    caches.match(base_url + ongoing_url).then(response => {
+    caches.match(proxy_url + base_url + ongoing_url).then(response => {
       if (response) {
         response.json().then(data => {
           listOngoing(data);
@@ -45,7 +45,7 @@ function getOngoingMatch() {
     });
   }
 
-  fetch(base_url + ongoing_url, {
+  fetch(proxy_url + base_url + ongoing_url, {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -61,7 +61,7 @@ function getOngoingMatch() {
 //SCHEDULED Match Fetch API
 function getScheduledMatch() {
   if ("caches" in window) {
-    caches.match(base_url + scheduled_url).then(response => {
+    caches.match(proxy_url + base_url + scheduled_url).then(response => {
       if (response) {
         response.json().then(data => {
           listScheduled(data);
@@ -70,7 +70,7 @@ function getScheduledMatch() {
     });
   }
 
-  fetch(base_url + scheduled_url, {
+  fetch(proxy_url + base_url + scheduled_url, {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -86,7 +86,7 @@ function getScheduledMatch() {
 //STANDING Stats Fetch API
 function getStatistic() {
   if ("caches" in window) {
-    caches.match(base_url + standing_url).then(response => {
+    caches.match(proxy_url + base_url + standing_url).then(response => {
       if (response) {
         response.json().then(data =>{
           listStanding(data);
@@ -95,7 +95,7 @@ function getStatistic() {
     });
   }
 
-  fetch(base_url + standing_url, {
+  fetch(proxy_url + base_url + standing_url, {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -111,7 +111,7 @@ function getStatistic() {
 //Season TOP Scorrer Fetch API
 function getTopScorrer() {
   if ("caches" in window) {
-    caches.match(base_url + scorrers_url).then(response => {
+    caches.match(proxy_url + base_url + scorrers_url).then(response => {
       if (response) {
         response.json().then(data =>{
           listScorrer(data);
@@ -120,7 +120,7 @@ function getTopScorrer() {
     });
   }
 
-  fetch(base_url + scorrers_url, {
+  fetch(proxy_url + base_url + scorrers_url, {
       headers: {
         'X-Auth-Token': auth_token
       },
@@ -136,7 +136,7 @@ function getTopScorrer() {
 //Competition Winner Fetch API
 function getCompWinner() {
   if ("caches" in window) {
-    caches.match(base_url + competition_url).then(response => {
+    caches.match(proxy_url + base_url + competition_url).then(response => {
       if (response) {
         response.json().then(data =>{
           listWinner(data);
@@ -145,7 +145,7 @@ function getCompWinner() {
     });
   }
 
-  fetch(base_url + competition_url, {
+  fetch(proxy_url + base_url + competition_url, {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -166,7 +166,7 @@ function getTeamById() {
     let idParam = urlParams.get("id");
 
     if ("caches" in window) {
-      caches.match(base_url + "teams/" + idParam).then(response => {
+      caches.match(proxy_url + base_url + "teams/" + idParam).then(response => {
         if (response) {
           response.json().then(data => {
             generateTeam(data);
@@ -177,7 +177,7 @@ function getTeamById() {
       });
     }
 
-    fetch(base_url + "teams/" + idParam, {
+    fetch(proxy_url + base_url + "teams/" + idParam, {
       headers: {
         'X-Auth-Token': auth_token
       },
@@ -206,7 +206,7 @@ function getPlayerById() {
     let idParam = urlParams.get("id");
 
     if ("caches" in window) {
-      caches.match(base_url + "players/" + idParam).then(response => {
+      caches.match(proxy_url + base_url + "players/" + idParam).then(response => {
         if (response) {
           response.json().then(data => {
             generatePlayer(data);
@@ -217,7 +217,7 @@ function getPlayerById() {
       });
     }
 
-    fetch(base_url + "players/" + idParam, {
+    fetch(proxy_url + base_url + "players/" + idParam, {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -241,7 +241,7 @@ function getSavedPlayer() {
 //Function fetch data match
 function getMatchList(teamID) {
   if ("caches" in window) {
-    caches.match(base_url + 'teams/' + teamID + '/matches/?competitions=2021').then(response => {
+    caches.match(proxy_url + base_url + 'teams/' + teamID + '/matches/?competitions=2021').then(response => {
       if (response) {
         response.json().then(data => {
           GenerateMatchList(data);
@@ -250,7 +250,7 @@ function getMatchList(teamID) {
     });
   }
 
-  fetch(base_url + 'teams/' + teamID + '/matches/?competitions=2021', {
+  fetch(proxy_url + base_url + 'teams/' + teamID + '/matches/?competitions=2021', {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -270,7 +270,7 @@ function getMatchById(id) {
     let idParam = urlParams.get("id");
 
     if ("caches" in window) {
-      caches.match(base_url + "matches/" + idParam).then(response => {
+      caches.match(proxy_url + base_url + "matches/" + idParam).then(response => {
         if (response) {
           response.json().then(data => {
             console.log(data);
@@ -282,7 +282,7 @@ function getMatchById(id) {
       });
     }
 
-    fetch(base_url + "matches/" + idParam, {
+    fetch(proxy_url + base_url + "matches/" + idParam, {
       headers: {
         'X-Auth-Token': auth_token
       }
@@ -307,7 +307,7 @@ function getSavedMatch() {
 function getClubBadge(id, club) {
   return new Promise(function(resolve, reject) {
     if ("caches" in window) {
-      caches.match(base_url + "teams/" + id).then(response => {
+      caches.match(proxy_url + base_url + "teams/" + id).then(response => {
         if (response) {
           response.json().then(data => {
             setClubBadge(data, club);
@@ -318,7 +318,7 @@ function getClubBadge(id, club) {
       });
     }
 
-    fetch(base_url + "teams/" + id, {
+    fetch(proxy_url + base_url + "teams/" + id, {
       headers: {
         'X-Auth-Token': auth_token
       }
