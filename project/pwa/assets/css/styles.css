@@ -75,7 +75,7 @@ a.sidebar-dark > span {
 }
 
 a.sidebar-dark > span.active {
-	color: #00ffdc;
+	color: #00e5ff;
 }
 
 a.sidebar-dark > span > i {
@@ -86,7 +86,7 @@ a.sidebar-dark > span > i {
 
 a.sidebar-dark > span:hover {
 	color: #000;
-	background-color: #00ffdc;
+	background-color: #00e5ff;
 
 }
 
@@ -685,7 +685,7 @@ a.sidebar-dark > span:hover {
 }
 
 .spinner-teal-only {
-	border-color: #00ffdc;
+	border-color: #00e5ff;
 }
  
 
