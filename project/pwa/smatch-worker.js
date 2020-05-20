@@ -9,6 +9,7 @@ if (workbox) {
 }
 /* WORKBOX SCRIPT STARTED */
 workbox.precaching.precacheAndRoute([
+    { url: './', revision: '1' },
     { url: './index.html', revision: '1' },
     { url: './manifest.json', revision: '1' },
     { url: './index.html', revision: '1' },
@@ -102,11 +103,6 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     new RegExp('/.*\\.js'),
-    new workbox.strategies.CacheFirst()
-);
-
-workbox.routing.registerRoute(
-    new RegExp('/.*\\.html'),
     new workbox.strategies.CacheFirst()
 );
 
