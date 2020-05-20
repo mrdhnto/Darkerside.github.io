@@ -5,12 +5,12 @@ if ("serviceWorker" in navigator) {
       .register("/smatch-worker.js")
       .then(function() {
         console.log("Pendaftaran ServiceWorker berhasil");
+        requestPermission();
       })
       .catch(function() {
         console.log("Pendaftaran ServiceWorker gagal");
       });
   });
-  requestPermission();
 } else {
   console.log("ServiceWorker belum didukung browser ini.");
 }
