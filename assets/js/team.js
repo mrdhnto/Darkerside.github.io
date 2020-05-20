@@ -77,7 +77,7 @@ function generateTeam(data){
 		teamHTML += `
 					  <div class="row rtext-data ${rclass}">
 	                    <div class="col squad-no">${squad.shirtNumber}</div>
-	                    <div class="col squad-name"><a href="https://darkerside.github.io/project/pwa/player.html?id=${squad.id}">${squad.name}</a></div>
+	                    <div class="col squad-name"><a href="./player.html?id=${squad.id}">${squad.name}</a></div>
 	                    <div class="col squad-pos">${squad.position}</div>
 	                  </div>
 		`

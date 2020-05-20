@@ -13,7 +13,7 @@ function GenerateMatchList(data){
 			matches.score.fullTime.awayTeam = "";
 		}
 		listHTML += `
-			<div class="row row-match"><a href="https://darkerside.github.io/project/pwa/match.html?id=${matches.id}">
+			<div class="row row-match"><a href="./match.html?id=${matches.id}">
               <div class="col s5">${matches.homeTeam.name}<span class="right">${matches.score.fullTime.homeTeam}</span></div>
               <div class="col s2 center-align">-</div>
               <div class="col s5">${matches.score.fullTime.awayTeam}<span class="right">${matches.awayTeam.name}</span></div>

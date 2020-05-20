@@ -1,49 +1,143 @@
-/*
-	Visualize by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
+//Main.js Script for the web
+document.addEventListener("DOMContentLoaded", function() {
+  // REQUEST API UNTUK PERTAMA KALI
+  const page = window.location.hash.substr(1);
+  const urlParams = new URLSearchParams(window.location.search);
+  const isFromSaved = urlParams.get("saved");
+  let item;
 
-$(function() {
+  if(pageindex === 0){
+  //console.log("you're in home.html");
+  } else if (pageindex === 1){
+  //console.log("you're in team.html");
+    if(isFromSaved){
+      $('#save').addClass("d-none");
+      // ambil team lalu tampilkan
+      getSavedDataById("teams");
+    } else {
+      item = getTeamById();
+      //isSavedAlready("teams");
+    }
 
-	// Vars.
-		var	$window = $(window),
-			$body = $('body'),
-			$wrapper = $('#wrapper');
+    save.onclick = function() {
+    //console.log("Tombol FAB di klik.");
+      item.then(function(team) {
+        let savedto = "teams";
+        saveForLater(team, savedto);
+      });
+              
+      $(this).addClass("d-none");
+    };
 
-	// Breakpoints.
-		skel.breakpoints({
-			xlarge:	'(max-width: 1680px)',
-			large:	'(max-width: 1280px)',
-			medium:	'(max-width: 980px)',
-			small:	'(max-width: 736px)',
-			xsmall:	'(max-width: 480px)'
-		});
+  } else if (pageindex === 2){
+  //console.log("you're in person.html");
+    if(isFromSaved){
+      $('#save').addClass("d-none");
+      // ambil artikel lalu tampilkan
+      getSavedDataById("players");
+    } else {
+      item = getPlayerById();
+      //isSavedAlready("players");
+    }
 
-	// Disable animations/transitions until everything's loaded.
-		$body.addClass('is-loading');
+    save.onclick = function() {
+    //console.log("Tombol FAB di klik.");
+      item.then(function(person) {
+        let savedto = "players";
+        saveForLater(person, savedto);
+      });
+              
+      $(this).addClass("d-none");
+    };
 
-		$window.on('load', function() {
-			$body.removeClass('is-loading');
-		});
+  } else if (pageindex === 3) {
+  //console.log("you're in match.html");
+    if(isFromSaved){
+      $('#save').addClass("d-none");
+      // ambil artikel lalu tampilkan
+      getSavedDataById("matches");
+    } else {
+      item = getMatchById();
+      //isSavedAlready("matches");
+    }
+    
+    save.onclick = function() {
+    //console.log("Tombol FAB di klik.");
+      item.then(function(match) {
+        let savedto = "matches";
+        saveForLater(match.match, savedto);
+      });
+              
+      $(this).addClass("d-none");
+    };
 
-	// Poptrox.
-		$window.on('load', function() {
+  } else {
+    console.log("You're Lost!")
+  };
 
-			$('.thumbnails').poptrox({
-				onPopupClose: function() { $body.removeClass('is-covered'); },
-				onPopupOpen: function() { $body.addClass('is-covered'); },
-				baseZIndex: 10001,
-				useBodyOverflow: false,
-				usePopupEasyClose: true,
-				overlayColor: '#000000',
-				overlayOpacity: 0.75,
-				popupLoaderText: '',
-				fadeSpeed: 500,
-				usePopupDefaultStyling: false,
-				windowMargin: (skel.breakpoint('small').active ? 5 : 50)
-			});
+});
 
-		});
+//Jquery script to make more simple
+$(document).ready(function() {
+
+  //navigation active effect
+  $(".sidenav").on("click", ".link", function(){
+    $(".link").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  //navigation tab on statistic pages
+  $("#body-content").on("click", ".icon-tabs-nav", function(){
+    //console.log($(this).attr("target"))
+    $('.icon-tabs-nav').removeClass("active");
+    $(this).addClass("active");
+    $('.content-tabs').addClass("d-none");
+    $('#' + $(this).attr("target")).removeClass("d-none");
+  });
+
+  //navigation tab on team.html
+  $("#body-content").on("click", ".icon-tabs-nav-phone", function(){
+    //console.log($(this).attr("target"))
+    $('.icon-tabs-nav-phone').removeClass("active");
+    $(this).addClass("active");
+    $('.content-tabs-phone').addClass("phone-d-none");
+    $('#' + $(this).attr("target")).removeClass("phone-d-none");
+  });
+
+  //delete function on saved pages
+  $("#body-content").on("click", ".mdi-delete", function(){
+    deleteData($(this).attr("id"), $(this).attr("target"));
+    if($(this).attr("target") === "teams") {
+      M.toast({html: $(this).attr("target2") + '&nbspberhasil dihapus!'})
+      getSavedTeam();
+    } else if($(this).attr("target") === "players") {
+      M.toast({html: $(this).attr("target2") + '&nbspberhasil dihapus!'})
+      getSavedPlayer();
+    } else if($(this).attr("target") === "matches") {
+      M.toast({html: 'Match ID&nbsp' + $(this).attr("target2") + '&nbspberhasil dihapus!'})
+      getSavedMatch();
+    }
+  });
+
+  //load Saved Club and hide this button
+  $("#body-content").on("click", "#btn-club", function(){
+    $('#btn-club').addClass("d-none");
+    $('#btn-player').removeClass("d-none");
+    getSavedTeam();
+  });
+
+  //load Saved Players and hide this button
+  $("#body-content").on("click", "#btn-player", function(){
+    $('#btn-player').addClass("d-none");
+    $('#btn-match').removeClass("d-none");
+    getSavedPlayer();
+  });
+
+  //load Saved Match and hide this button
+  $("#body-content").on("click", "#btn-match", function(){
+    $('#btn-match').addClass("d-none");
+    $('#btn-club').removeClass("d-none");
+    getSavedMatch();
+  });
 
 });

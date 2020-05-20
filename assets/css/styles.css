@@ -16,7 +16,7 @@ footer {
 }
 
 .container {
-	min-height: 550px;
+	min-height: 520px;
 }
 
 /* width & height */
@@ -483,6 +483,7 @@ a.sidebar-dark > span:hover {
 
 .saved-del {
 	font-size: 2rem;
+	margin-top: 4px;
 }
 
 .mdi-delete {

@@ -112,8 +112,8 @@ function listStanding(data){
         statistikHTML += `
                   <div class="row klasemen-row">
                     <div class="col klasemen-pos">${table.position}</div>
-                    <div class="col klasemen-badge"><a href="https://darkerside.github.io/project/pwa//team.html?id=${table.team.id}"><img src="${table.team.crestUrl}" alt="${table.team.name}"></a></div>
-                    <div class="col klasemen-team"><a href="https://darkerside.github.io/project/pwa//team.html?id=${table.team.id}">${table.team.name}</a></div>
+                    <div class="col klasemen-badge"><a href="/team.html?id=${table.team.id}"><img src="${table.team.crestUrl}" alt="${table.team.name}"></a></div>
+                    <div class="col klasemen-team"><a href="/team.html?id=${table.team.id}">${table.team.name}</a></div>
                     <div class="col klasemen-teaminfo">${table.playedGames}</div>
                     <div class="col klasemen-teaminfo">${table.won}</div>
                     <div class="col klasemen-teaminfo">${table.draw}</div>
@@ -219,8 +219,8 @@ function listWinner(data){
               winnerHTML += `
                   <div class="row row-winner">
                       <div class="col s5 m4 center-align season-year">${sStart} - ${sEnd}</div>
-                      <div class="col s1 m1"><a href="https://darkerside.github.io/project/pwa/team.html?id=${seasons.winner.id}"><img class="winner-badge right" src="${seasons.winner.crestUrl}" alt="${seasons.winner.name}"></a></div>
-                      <div class="col s6 m7"><a href="https://darkerside.github.io/project/pwa/team.html?id=${seasons.winner.id}">${seasons.winner.name}</a></div>
+                      <div class="col s1 m1"><a href="/team.html?id=${seasons.winner.id}"><img class="winner-badge right" src="${seasons.winner.crestUrl}" alt="${seasons.winner.name}"></a></div>
+                      <div class="col s6 m7"><a href="/team.html?id=${seasons.winner.id}">${seasons.winner.name}</a></div>
                   </div>
                   <div class="divider-dark"></div>
                   `;
@@ -251,8 +251,8 @@ function listSavedTeam(team){
       savedHTML += `
             <div class="row card saved-data">
               <div class="saved-content">
-                <div class="col s2 center-align"><a href="https://darkerside.github.io/project/pwa/team.html?id=${team.id}&saved=true"><img class="saved-badge" src="${team.crestUrl}" alt="${team.name}"></a></div>
-                <div class="col s8 truncate saved-title"><a href="https://darkerside.github.io/project/pwa/team.html?id=${team.id}&saved=true">${team.name}</a></div>
+                <div class="col s2 center-align"><a href="./team.html?id=${team.id}&saved=true"><img class="saved-badge" src="${team.crestUrl}" alt="${team.name}"></a></div>
+                <div class="col s8 truncate saved-title"><a href="./team.html?id=${team.id}&saved=true">${team.name}</a></div>
                 <div class="col s2 saved-del right"><i class="mdi mdi-delete red-text text-darken-4" id="${team.id}" target="teams" target2="${team.name}"></i></div>
               </div>
             </div>
@@ -279,9 +279,9 @@ function listSavedPlayer(player){
       savedHTML += `
             <div class="row card saved-data">
               <div class="saved-content">
-                <div class="col s2 center-align"><a href="https://darkerside.github.io/project/pwa/player.html?id=${player.id}&saved=true"><img class="saved-badge" alt="player_img" src="https://darkerside.github.io/project/pwa/assets/images/player.png"></a></div>
-                <div class="col s8 truncate saved-title"><a href="https://darkerside.github.io/project/pwa/player.html?id=${player.id}&saved=true">${player.name}</a></div>
-                <div class="col s2 saved-del right><i class="mdi mdi-delete red-text text-darken-4" id="${player.id}" target="players" target2="${player.name}"></i></div>
+                <div class="col s2 center-align"><a href="./player.html?id=${player.id}&saved=true"><img class="saved-badge" alt="player_img" src="/assets/images/player.png"></a></div>
+                <div class="col s8 truncate saved-title"><a href="./player.html?id=${player.id}&saved=true">${player.name}</a></div>
+                <div class="col s2 saved-del right-align><i class="mdi mdi-delete red-text text-darken-4" id="${player.id}" target="players" target2="${player.name}"></i></div>
               </div>
             </div>
       `;
@@ -307,10 +307,9 @@ function listSavedMatch(match){
       savedHTML += `
             <div class="row card saved-data">
               <div class="saved-content">
-                <a href="https://darkerside.github.io/project/pwa/match.html?id=${match.id}&saved=true"><div class="col s5 truncate saved-title">${match.homeTeam.name}</div></a>
-                <a href="https://darkerside.github.io/project/pwa/match.html?id=${match.id}&saved=true"><div class="col s1 saved-title center-align">-</div></a>
-                <a href="https://darkerside.github.io/project/pwa/match.html?id=${match.id}&saved=true"><div class="col s5 saved-title right-align truncate">${match.awayTeam.name}</div></a>
-                <div class="col s1 saved-del right"><i class="mdi mdi-delete red-text text-darken-4" id="${match.id}" target="matches" target2="${match.id}"></i></div>
+                <div class="col s2 center-align"><img class="saved-badge" alt="match_img" src="/assets/images/match.png"></div>
+                <div class="col s8 truncate saved-title mt0">Home : ${match.homeTeam.name}<br/>Away : ${match.awayTeam.name}</div>
+                <div class="col s2 saved-del right-align"><i class="mdi mdi-delete red-text text-darken-4" id="" target="players" target2=""></i></div>
               </div>
             </div>
       `;

@@ -9,7 +9,7 @@ function generatePlayer(data){
         <div class="col s12">
 	      <div class="card gradient-cyan-teal-light">
 	        <div class="card-content">
-	          <img src="https://darkerside.github.io/project/pwa/assets/images/player.png" class="left" id="player-icon"><span class="card-title">${data.name}</span>
+	          <img src="/assets/images/player.png" class="left" id="player-icon"><span class="card-title">${data.name}</span>
 	            ${data.nationality}, ${age} year old | ${data.shirtNumber} ${data.position}
 	        </div>
 	      </div>

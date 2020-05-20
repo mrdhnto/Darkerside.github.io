@@ -1,73 +1,59 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>RA121514 - Landing Page</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="./assets/css/main.css" />
-		<link rel="stylesheet" href="./assets/css/materialdesignicons.min.css" />
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Daily Soccer Info" />
+    <meta name="keywords" content="Daily Soccer Info, Klasemen, Premiere League, Team Info, Club Info">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="RA121514">
+    <meta name="author" content="Luminix Studio">
+    <meta name="dicoding:email" content="riski.mardianto@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#131417"/>
+    <link href="./assets/images/icon-apple.jpg" rel="apple-touch-icon">
+    <link href="./assets/images/icon-apple.jpg" rel="apple-touch-startup-image">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <link rel="stylesheet" href="./assets/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./assets/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="./assets/images/icon-512.png" >
+    <title>SMatch - Daily Soccer Info</title>
+  </head>
+  <body>
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><img src="./assets/images/avatar.jpg" alt="RA121514" /></span>
-						<h1 class="akashiro">Network Engineer & Programmer from Indramayu, Indonesia.<br />
-						&nbsp;Everything showed here is based on my hobby. Feel free to contact me.</h1>
-						<ul class="icons">
-							<li><a href="https://github.com/Darkerside" class="icon style2 mdi mdi-github" title="RA121514 Github Page"><span class="label">Github</span></a></li>
-							<li><a href="https://facebook.com/ryoken.anezaki" class="icon style2 mdi mdi-facebook" title="RA121514 Facebook Page"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.linkedin.com/in/rm121514/" class="icon style2 mdi mdi-linkedin" title="RA121514 LinkedIn Page"><span class="label">LinkedIn</span></a></li>
-							<li><a href="mailto:riski.mardianto@gmail.com" class="icon style2 mdi mdi-email-outline" title="RA121514 E-Mail Address"><span class="label">Email</span></a></li>
-							<li><a href="#" class="icon style2 mdi mdi-file-download" title="RA121514 CV Download"><span class="label">Download CV</span></a></li>
-						</ul>
-					</header>
+    <nav class="bg-dark lighten-1" role="navigation ">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">SMatch<span class="site-desc"> - Your Daily Soccer Info</span></a>
+        <ul class="right">
+          <li><a href="#" class="sidenav-trigger show-on-large" data-target="slide-out"><i class="mdi mdi-menu"></i></a></li>
+        </ul>
+      </div>
+    </nav>
 
-				<!-- Main -->
-					<section id="main" style="margin-top: 4.5em;">
+    <ul id="slide-out" class="sidenav bg-dark">
+    </ul>
 
-						<h1 class="akashiro center"><span class="dotted">My WEB Project</span></h1>
-						<!-- Thumbnails -->
-							<section class="thumbnails">
-								<div>
-									<a href="https://darkerside.github.io/project/anitime">
-										<img src="./assets/images/project/anitime.jpg" alt="AniTime" />
-										<h3>Daily Anime, OVA, ONA & Movie Schedule that synchronize with your local time</h3>
-									</a>
-									<a href="http://spcoded.herobo.com/project/animini">
-										<img src="./assets/images/project/animini.jpg" alt="Animini" />
-										<h3>Seasonal Anime Movie Aired Database | Base for AniTime Website (Now integrated to AniTime)</h3>
-									</a>
-								</div>
-								<div>
-									<a href="http://spcoded.herobo.com/inject">
-										<img src="./assets/images/project/inject.jpg" alt="RAInject" />
-										<h3>An 24h Web Inject for your daily need</h3>
-									</a>
-								</div>
-								<div>
-									<a href="#">
-										<img src="./assets/images/project/statistic.jpg" alt="PHP Descriptive" />
-										<h3>College Project | Statistic Descriptive using PHP (Data Processing Code by Me)</h3>
-									</a>
-								</div>
-							</section>
+    <div class="container white" id="body-content"></div>
 
-					</section>
+    <footer class="page-footer">
+      <span class="copyright">SMatch &copy2020 | Build with <i class="mdi mdi-heart"></i> by Luminix Studio</span>
+    </footer>
 
-				<!-- Footer -->
-					<footer id="footer" style="padding: 0px 0px 0px 0px !important;">
-						<p>&copy; RA121514. All rights reserved.</p>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/jquery-3.5.0.slim.min"></script>
-	</body>
+    <script type="text/javascript" src="./assets/js/register.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./assets/js/idb.js"></script>
+    <script type="text/javascript" src="./assets/js/db.js"></script>
+    <script type="text/javascript" src="./assets/js/nav.js"></script>
+    <script type="text/javascript" src="./assets/js/dom.js"></script>
+    <script type="text/javascript" src="./assets/js/api.js"></script>
+    
+    <script>
+      // set 0 for home
+      let pageindex = 0;
+    </script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>
+  </body>
 </html>
