@@ -158,12 +158,12 @@ function listScorrer(data){
         if(scorers.player.shirtNumber===null){scorers.player.shirtNumber = "?";}
         scorrerHTML += `
                   <div class="row scorrer-row">
-                      <div class="col scorrer-pos">${i}</div>
-                      <div class="col scorrer-name">${scorers.player.name}</div>
-                      <div class="col scorrer-number">${scorers.player.shirtNumber}</div>
-                      <div class="col scorrer-post">${scorers.player.position}</div>
-                      <div class="col scorrer-team">${scorers.team.name}</div>
-                      <div class="col scorrer-goal">${scorers.numberOfGoals}</div>
+                      <div class="col scorrer-pos"><a href="./player.html?id=${scorers.player.id}">${i}</a></div>
+                      <div class="col scorrer-name"><a href="./player.html?id=${scorers.player.id}">${scorers.player.name}</a></div>
+                      <div class="col scorrer-number"><a href="./player.html?id=${scorers.player.id}">${scorers.player.shirtNumber}</a></div>
+                      <div class="col scorrer-post"><a href="./player.html?id=${scorers.player.id}">${scorers.player.position}</a></div>
+                      <div class="col scorrer-team"><a href="./team.html?id=${scorers.team.id}">${scorers.team.name}</a></div>
+                      <div class="col scorrer-goal"><a href="./player.html?id=${scorers.player.id}">${scorers.numberOfGoals}</a></div>
                     </div>
                   `;
               i++;
@@ -307,8 +307,8 @@ function listSavedMatch(match){
       savedHTML += `
             <div class="row card saved-data">
               <div class="saved-content">
-                <div class="col s2 center-align"><img class="saved-badge" alt="match_img" src="/assets/images/match.png"></div>
-                <div class="col s8 truncate saved-title mt0">Home : ${match.homeTeam.name}<br/>Away : ${match.awayTeam.name}</div>
+                <div class="col s2 center-align"><a href="./match.html?id=${match.id}&saved=true"><img class="saved-badge" alt="match_img" src="/assets/images/match.png"></a></div>
+                <div class="col s8 truncate saved-title mt0"><a href="./match.html?id=${match.id}&saved=true">Home : ${match.homeTeam.name}<br/>Away : ${match.awayTeam.name}</a></div>
                 <div class="col s2 saved-del right-align"><i class="mdi mdi-delete red-text text-darken-4" id="" target="players" target2=""></i></div>
               </div>
             </div>

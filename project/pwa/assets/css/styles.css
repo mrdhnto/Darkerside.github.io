@@ -116,6 +116,10 @@ a.sidebar-dark > span:hover {
 	border-bottom: 1px solid rgba(0,0,0,0.12);
 }
 
+.scorrer-row a {
+	color: #fff;
+}
+
 #stat-head, #score-head {
 	min-width: 600px;
 }
