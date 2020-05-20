@@ -53,7 +53,10 @@ workbox.precaching.precacheAndRoute([
     { url: '/assets/images/match.png', revision: '1' },
     { url: '/assets/images/luminix-teal.jpg', revision: '1' },
     { url: '/assets/images/mine.jpg', revision: '1' },
-]);
+],{
+  // Ignore all URL parameters.
+  ignoreURLParametersMatching: [/.*/]
+});
 
 
 // Menyimpan cache dari CSS Google Fonts
@@ -103,11 +106,6 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
     new RegExp('.*\\.js'),
-    new workbox.strategies.CacheFirst()
-);
-
-workbox.routing.registerRoute(
-    new RegExp('.*\\.html'),
     new workbox.strategies.CacheFirst()
 );
 
