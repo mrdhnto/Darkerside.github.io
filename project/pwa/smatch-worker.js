@@ -80,7 +80,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  new RegExp('https://api.football-data.org/v2/'),
+  new RegExp('https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: 'football-api',
   })
