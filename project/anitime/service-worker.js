@@ -8,7 +8,7 @@ workbox.precaching.precacheAndRoute([
   { url: './index.html', revision: '1' },
   { url: './manifest.json', revision: '1' },
   { url: './bundle.js', revision: '1' },
-  { url: './assets/css/styles.css', revision: '1' },
+  { url: './assets/css/anitime.styles.css', revision: '1' },
   { url: './assets/css/bootstrap.min.css', revision: '1' },
   { url: './assets/css/jquery.mCustomScrollbar.min.css', revision: '1' },
   { url: './assets/css/materialdesignicons.min.css', revision: '1' },
