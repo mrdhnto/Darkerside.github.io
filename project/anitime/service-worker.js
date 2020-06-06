@@ -4,36 +4,36 @@ importScripts('https://cdn.jsdelivr.net/npm/idb-keyval@3/dist/idb-keyval-iife.mi
 
 /* WORKBOX SCRIPT STARTED */
 workbox.precaching.precacheAndRoute([
-  { url: './', revision: '0.3 Beta' },
-  { url: './index.html', revision: '0.3 Beta' },
-  { url: './manifest.json', revision: '0.3 Beta' },
-  { url: './bundle.js', revision: '0.3 Beta' },
-  { url: './assets/css/styles.css', revision: '0.3 Beta' },
-  { url: './assets/css/bootstrap.min.css', revision: '0.3 Beta' },
-  { url: './assets/css/jquery.mCustomScrollbar.min.css', revision: '0.3 Beta' },
-  { url: './assets/css/materialdesignicons.min.css', revision: '0.3 Beta' },
-  { url: './assets/css/mdb.lite.min.css', revision: '0.3 Beta' },
-  { url: './assets/js/bootstrap.min.js', revision: '0.3 Beta' },
-  { url: './assets/js/jquery-3.5.1.min.js', revision: '0.3 Beta' },
-  { url: './assets/js/jquery.mCustomScrollbar.concat.min.js', revision: '0.3 Beta' },
-  { url: './assets/js/mdb.lite.min.js', revision: '0.3 Beta' },
-  { url: './assets/js/moment.js', revision: '0.3 Beta' },
-  { url: './assets/js/popper.min.js', revision: '0.3 Beta' },
-  { url: './assets/js/idb.js', revision: '0.3 Beta' },
-  { url: './assets/fonts/materialdesignicons-webfont.woff', revision: '0.3 Beta' },
-  { url: './assets/fonts/materialdesignicons-webfont.woff2', revision: '0.3 Beta' },
-  { url: './assets/images/icon-512.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-384.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-256.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-192.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-152.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-144.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-128.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-96.png', revision: '0.3 Beta' },
-  { url: './assets/images/icon-72.png', revision: '0.3 Beta' },
-  { url: './assets/images/apple-icon.png', revision: '0.3 Beta' },
-  { url: './assets/images/logo.png', revision: '0.3 Beta' },
-  { url: './assets/images/anitime-bn.png', revision: '0.3 Beta' },
+  { url: './', revision: '0.3.2 Beta' },
+  { url: './index.html', revision: '0.3.2 Beta' },
+  { url: './manifest.json', revision: '0.3.2 Beta' },
+  { url: './bundle.js', revision: '0.3.2 Beta' },
+  { url: './assets/css/styles.css', revision: '0.3.2 Beta' },
+  { url: './assets/css/bootstrap.min.css', revision: '0.3.2 Beta' },
+  { url: './assets/css/jquery.mCustomScrollbar.min.css', revision: '0.3.2 Beta' },
+  { url: './assets/css/materialdesignicons.min.css', revision: '0.3.2 Beta' },
+  { url: './assets/css/mdb.lite.min.css', revision: '0.3.2 Beta' },
+  { url: './assets/js/bootstrap.min.js', revision: '0.3.2 Beta' },
+  { url: './assets/js/jquery-3.5.1.min.js', revision: '0.3.2 Beta' },
+  { url: './assets/js/jquery.mCustomScrollbar.concat.min.js', revision: '0.3.2 Beta' },
+  { url: './assets/js/mdb.lite.min.js', revision: '0.3.2 Beta' },
+  { url: './assets/js/moment.js', revision: '0.3.2 Beta' },
+  { url: './assets/js/popper.min.js', revision: '0.3.2 Beta' },
+  { url: './assets/js/idb.js', revision: '0.3.2 Beta' },
+  { url: './assets/fonts/materialdesignicons-webfont.woff', revision: '0.3.2 Beta' },
+  { url: './assets/fonts/materialdesignicons-webfont.woff2', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-512.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-384.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-256.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-192.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-152.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-144.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-128.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-96.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/icon-72.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/apple-icon.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/logo.png', revision: '0.3.2 Beta' },
+  { url: './assets/images/anitime-bn.png', revision: '0.3.2 Beta' },
 ],{
   // Ignore all URL parameters.
   ignoreURLParametersMatching: [/.*/]
@@ -68,7 +68,31 @@ workbox.routing.registerRoute(
 
 //Menyimpan cache untuk file cdn selama 1 tahun
 workbox.routing.registerRoute(
-  new RegExp('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/'),
+  /^https:\/\/storage\.googleapis\.com/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'cdn-file',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  /^https:\/\/cdn\.jsdelivr\.net/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'cdn-file',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  /^https:\/\/cdnjs\.cloudflare\.com/,
   new workbox.strategies.CacheFirst({
     cacheName: 'cdn-file',
     plugins: [
@@ -106,8 +130,28 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+    /\.(?:js|css)$/,
+     new workbox.strategies.CacheFirst({
+        cacheName: 'images',
+        plugins: [
+            new workbox.expiration.ExpirationPlugin({
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30days
+            }),
+        ],
+    }),
+);
+
+/*
+workbox.routing.registerRoute(
     new RegExp('.*\\.js'),
     new workbox.strategies.CacheFirst()
+);
+*/
+
+workbox.routing.registerRoute(
+  /\.(?:js|css)$/,
+  new workbox.strategies.CacheFirst()
 );
 
 // Return cached response when possible, and fetch new results from server in
@@ -180,10 +224,10 @@ async function getCache(request) {
     // Check cache max age.
     let cacheControl = request.headers.get('Cache-Control');
     let maxAge = cacheControl ? parseInt(cacheControl.split('=')[1]) : 3600;
-    if (Date.now() - data.timestamp > maxAge * 1000) {
+    /*if (Date.now() - data.timestamp > maxAge * 1000) {
       console.log(`Cache expired. Load from API endpoint.`);
       return null;
-    }
+    }*/
 
     console.log(`Load response from cache.`);
     return new Response(JSON.stringify(data.response.body), data.response);

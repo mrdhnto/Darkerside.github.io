@@ -8,6 +8,7 @@
   "short_name": "AniTime",
   "theme_color": "#131417",
   "background_color": "#131417",
+  "description": "Daily Anime Schedules that Synchronize with Your Timezone",
   "display": "standalone",
   "start_url": "index.html",
     "icons": [
